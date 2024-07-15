@@ -12,4 +12,8 @@
     <PackageReference Include="pythonnet" Version="3.0.3" />
   </ItemGroup>
 
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="xcopy &quot;$(ProjectDir)mypythonscript.py&quot; &quot;$(TargetDir)&quot; /Y" />
+  </Target>
+
 </Project>
